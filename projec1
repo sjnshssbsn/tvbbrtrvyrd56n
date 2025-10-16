@@ -1,0 +1,37 @@
+using System;
+class Program
+{
+static void Main(string[] args)
+{
+string customerName = Console.ReadLine();
+int age = int.Parse(Console.ReadLine());
+double totalAmount = double.Parse(Console.ReadLine());
+    
+    double discount = 0;
+    
+    if (totalAmount < 50)
+    {
+        discount = 0;
+    }
+    else if (totalAmount >= 50 && totalAmount <= 100)
+    {
+        discount = 0.05;
+    }
+    else if (totalAmount > 100)
+    {
+        discount = 0.10;
+    }
+    
+    if (age < 18)
+    {
+        discount += 0.02;
+    }
+    
+    double finalAmount = totalAmount - (totalAmount * discount);
+    
+    finalAmount = Math.Round(finalAmount, 2);
+    
+    Console.WriteLine(customerName);
+    Console.WriteLine(finalAmount);
+}
+}
